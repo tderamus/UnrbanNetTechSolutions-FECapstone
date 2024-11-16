@@ -21,13 +21,10 @@
 ----
 # Features:
 * App will have authentication for individual users 
-
+* App will have registration for new application users
+* App will facilitate CREATE, READ, UPDATE, and DELETE functions on user specific assets
 * App will handle math functions on cost with totals 
-
-* App will use external APIs for asset data (stretch goal) 
-
 * App will filter asset details by location and users 
-
 * App will maintain relationships between managers, employees, and assets
 
 #### TODO ADD Project Screenshots
