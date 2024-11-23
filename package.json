@@ -1,7 +1,8 @@
 {
-  "name": "nextjs-app-router-with-firebase-auth",
+  "name": "UrbanNet Tech Solutions",
   "version": "0.1.0",
   "private": true,
+  "author": "Toren DeRamus",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

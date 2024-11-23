@@ -1,46 +1,32 @@
-# NextJS with Firebase Auth App Router Template
 
-[See Live Demo of this Template](https://drt-next-js-template-app-router.netlify.app/)
+# **Welcome to The UrbanNet Tech Solutiions Asset Management Application**
 
-## Topics
-- [Get Started](#get-started)
-- [Starting the Project](#starting-the-project)
-- [Deploying on Netlify](#deploying-on-netlify)
-___
-## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
 
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/29741570/177613126-dd38f678-7553-4f27-8a4a-75680f14d71e.png">
+# Project Summary:
 
-#### 3. Clone your new repo to your local machine
-#### 4. Go to the **NEXT** section
+#### _This application will handle the monitoring and management of all UrbanNet digital assets in one easy to reach centralized location. The app will provide an efficient means of tracking the lifecycle of new and existing assets as they are distributed or redistributed between employees or locations. The app will also digitally transform asset management away from legacy systems for more accurate reporting of historical spend and asset usage._  
+----
+## [Wireframe](https://www.figma.com/design/tTi899paSf0up6I5kjwQd4/Assets-App-Wireframe?node-id=0-1&node-type=canvas&t=LwTc1B0qtrory5sq-0)
 
-## Starting the Project
-1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
+## [ERD](https://dbdiagram.io/d/UrbanNet-Tech-Solutions-673551ade9daa85aca6233e2)
 
-### Deploying on Netlify
-Netlify will automatically detect your project and prepopulate the settings, but should something go wrong and it does not, here are the commands:
+## [TODO: Deployed Application Netlify]()
 
-- Build Command: `npm run build`
-- Publish directory: `.next`
+## [Project Board](https://github.com/users/tderamus/projects/6/views/3)
 
-#### Additional Steps to Take on Netlify
-- Add Environmental Variables
-    - Any Enviromental variables you are using in your `.env` file should be added to Netlify. 
-        - Go to Site settings > Build & deploy > Environment > Environment variables and the keys and values there if you did not add them when you were deploying your site
+----
+# Application Users:
+#### _Users of this application are UrbanNet regional managers who are responsible for the maintaing the lifecycle of company assets as they are distributed for employee use. Managers are also responsible for maintain accurate budgetary spenditures on all of their assigned assets._ 
 
-- Update Firebase URL Settings
-    - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
-        
-## Learn More about Next.js
-To learn more about Next.js, take a look at the following resources:
+----
+# Features:
+* App will have authentication for individual users 
+* App will have registration for new application users
+* App will facilitate CREATE, READ, UPDATE, and DELETE functions on user specific assets
+* App will handle math functions on cost with totals 
+* App will filter asset details by location and users 
+* App will maintain relationships between managers, employees, and assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### TODO ADD Project Screenshots
+
+## [TODO: Loom Video]()
