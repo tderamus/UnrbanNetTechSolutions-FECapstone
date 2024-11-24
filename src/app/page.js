@@ -1,4 +1,15 @@
+'use clisnt';
+
+import Signin from '../components/SignIn';
+import { useAuth } from '../utils/context/authContext';
+
 function Home() {
+  const { user } = useAuth;
+
+  if (!user) {
+    return <Signin />;
+  }
+
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -9,7 +20,7 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      Welcome to Next JS!
+      Welcome to the UrbanNet Tech Solutions Asset Manager!
     </div>
   );
 }
