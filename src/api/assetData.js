@@ -43,4 +43,34 @@ const getAssetsByID = () =>
       .catch(reject);
   });
 
-export { getAllAssets, getAssetsByID };
+// Create New Asset
+const createAsset = (payload) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/assets.json`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+// Update Assets
+const updateAsset = (payload) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/assets/${payload.firebaseKey}.json`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+export { getAllAssets, getAssetsByID, createAsset, updateAsset };

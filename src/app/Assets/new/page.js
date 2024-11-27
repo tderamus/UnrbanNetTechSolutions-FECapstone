@@ -1,5 +1,10 @@
 import React from 'react';
+import AssetForm from '../../../components/forms/AssetForm';
 
 export default function AddAssets() {
-  return <div>Welcome to the add assets page!</div>;
+  return (
+    <div>
+      <AssetForm />
+    </div>
+  );
 }
