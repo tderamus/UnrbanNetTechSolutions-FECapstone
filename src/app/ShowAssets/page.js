@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import AssetCard from '../../components/AssetCard';
-import getAllAssets from '../../api/assetData';
+import { getAllAssets } from '../../api/assetData';
 
 export default function ShowAssets() {
   const [devices, setDevices] = useState([]);

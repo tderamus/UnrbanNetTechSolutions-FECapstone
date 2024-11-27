@@ -2,6 +2,7 @@
 
 import Signin from '../components/SignIn';
 import { useAuth } from '../utils/context/authContext';
+import UserProfile from './UserProfile/[uid]/page';
 
 function Home() {
   const { user } = useAuth;
@@ -10,19 +11,7 @@ function Home() {
     return <Signin />;
   }
 
-  return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      Welcome to the UrbanNet Tech Solutions Asset Manager!
-    </div>
-  );
+  return <UserProfile />;
 }
 
 export default Home;
