@@ -16,7 +16,7 @@ const getAllAssets = () =>
       .then((data) => {
         if (data) {
           resolve(Object.values(data));
-          console.warn(data);
+          console.warn('API', data);
         } else {
           resolve([]);
         }
