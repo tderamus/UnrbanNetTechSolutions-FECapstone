@@ -88,6 +88,16 @@ function AssetForm({ obj = initialState }) {
         <Form.Control type="text" placeholder="Enter asset name" name="name" value={formInput.name} onChange={handleChange} required />
       </FloatingLabel>
 
+      {/* ASSET TYPE RADIO BUTTONS */}
+      <div className="mb-3">
+        <Form.Label className="text-white">Asset Type</Form.Label>
+        <div>
+          {['Desktop', 'Laptop', 'Tablet', 'Mobile Phone', 'Hotspot'].map((type) => (
+            <Form.Check key={type} inline label={type} type="radio" id={`type-${type}`} name="type" value={type} checked={formInput.type === type} onChange={handleChange} className="text-white" />
+          ))}
+        </div>
+      </div>
+
       {/* LOCATION SELECT  */}
       <FloatingLabel controlId="floatingSelect" label="Location">
         <Form.Select aria-label="Location" name="locationId" onChange={handleChange} className="mb-3" value={formInput.locationId || ''} required>
