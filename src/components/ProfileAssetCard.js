@@ -3,7 +3,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-function AssetCard({ assetObj }) {
+function ProfileAssetCard({ assetObj }) {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={assetObj.image} alt={assetObj.description} />
@@ -25,11 +25,16 @@ function AssetCard({ assetObj }) {
           )}
         </p>
       </ListGroup>
+      <Card.Body>
+        <Card.Link href="#">VIEW</Card.Link>
+        <Card.Link href="#">EDIT</Card.Link>
+        <Card.Link href="#">DELETE</Card.Link>
+      </Card.Body>
     </Card>
   );
 }
 
-AssetCard.propTypes = {
+ProfileAssetCard.propTypes = {
   assetObj: PropTypes.shape({
     image: PropTypes.string,
     description: PropTypes.string,
@@ -43,4 +48,4 @@ AssetCard.propTypes = {
   }).isRequired,
 };
 
-export default AssetCard;
+export default ProfileAssetCard;

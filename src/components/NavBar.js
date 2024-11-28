@@ -18,6 +18,15 @@ export default function NavBar() {
             <Link className="nav-link" href="/ShowAssets">
               All Assets
             </Link>
+            <Link className="nav-link" href="/Assets/new">
+              Add Assets
+            </Link>
+            <Link className="nav-link" href="/ShowLocations/">
+              All Locations
+            </Link>
+            <Link className="nav-link" href="/Locations/new">
+              Add Locations
+            </Link>
             <Button variant="danger" onClick={signOut}>
               Sign Out
             </Button>

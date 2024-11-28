@@ -2,6 +2,8 @@
   "-OCGc_MS1egMjkVNdFkh": {
     "image": "http://dummyimage.com/186x100.png/cc0000/ffffff",
     "assetNo": "1490692215",
+    "type": "",
+    "assignedTo": " ",
     "serialNo": "7584507182",
     "modelNo": "O2 XDA Exec",
     "name": "Citizens, Inc.",
@@ -9,12 +11,14 @@
     "description": "Microsoft Windows Mobile 5.0 PocketPC",
     "notes": "\"\"",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_MS1egMjkVNdFkh",
     "uid": "1531035108"
   },
   "-OCGc_MUMJBMGZw9PbDc": {
     "image": "http://dummyimage.com/177x100.png/cc0000/ffffff",
     "assetNo": "3356555618",
+    "type": "",
+    "assignedTo": " ",
     "serialNo": "3843896704",
     "modelNo": "Samsung X820",
     "name": "The Charles Schwab Corporation",
@@ -22,12 +26,14 @@
     "description": "Feature phone",
     "notes": "NIL",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_MUMJBMGZw9PbDc",
     "uid": "1792779712"
   },
   "-OCGc_MVBid1BtAMv8P6": {
     "image": "http://dummyimage.com/226x100.png/ff4444/ffffff",
     "assetNo": "3986327703",
+    "type": "",
+    "assignedTo": " ",
     "serialNo": "8583796181",
     "modelNo": "Sagem MW 3052",
     "name": "Lipocine Inc.",
@@ -35,12 +41,14 @@
     "description": "Feature phone",
     "notes": "社會科學院語學研究所",
     "isDeployed": false,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_MVBid1BtAMv8P6",
     "uid": "1459504968"
   },
   "-OCGc_MWwlmOXzCbfuCY": {
     "image": "http://dummyimage.com/115x100.png/5fa2dd/ffffff",
     "assetNo": "5250075126",
+    "type": "",
+    "assignedTo": " ",
     "serialNo": "0065485939",
     "modelNo": "Energizer Hardcase H280S",
     "name": "Allstate Corporation (The)",
@@ -48,12 +56,14 @@
     "description": "KaiOS",
     "notes": "1E02",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_MWwlmOXzCbfuCY",
     "uid": "4655997133"
   },
   "-OCGc_MYsIu9IgjADymb": {
     "image": "http://dummyimage.com/110x100.png/ff4444/ffffff",
     "assetNo": "4114888500",
+    "type": "",
+    "assignedTo": " ",
     "serialNo": "0865198047",
     "modelNo": "Gionee X1s",
     "name": "Smith Micro Software, Inc.",
@@ -61,12 +71,14 @@
     "description": "Android 7, Amigo 4",
     "notes": "(｡◕ ∀ ◕｡)",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_MYsIu9IgjADymb",
     "uid": "1838637907"
   },
   "-OCGc_MZwZX6exFH2eJr": {
     "image": "http://dummyimage.com/109x100.png/5fa2dd/ffffff",
     "assetNo": "1672674506",
+    "type": "",
+    "assignedTo": " ",
     "serialNo": "3123522733",
     "modelNo": "Motorola ES400",
     "name": "China TechFaith Wireless Communication Technology Limited",
@@ -74,12 +86,14 @@
     "description": "Microsoft Windows Mobile 6.5.3 Professional",
     "notes": "åß∂ƒ©˙∆˚¬…æ",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey":"-OCGc_MZwZX6exFH2eJr",
     "uid": "1850621780"
   },
   "-OCGc_Macaj0TKf9i-AM": {
     "image": "http://dummyimage.com/113x100.png/dddddd/000000",
     "assetNo": "4205264046",
+    "type": "",
+    "assignedTo": " ",
     "serialNo": "0206018223",
     "modelNo": "Amoi M636",
     "name": "National General Holdings Corp",
@@ -87,12 +101,13 @@
     "description": "Feature phone",
     "notes": "̦H̬̤̗̤͝e͜ ̜̥̝̻͍̟́w̕h̖̯͓o̝͙̖͎̱̮ ҉̺̙̞̟͈W̷̼̭a̺̪͍į͈͕̭͙̯̜t̶̼̮s̘͙͖̕ ̠̫̠B̻͍͙͉̳ͅe̵h̵̬͇̫͙i̹͓̳̳̮͎̫̕n͟d̴̪̜̖ ̰͉̩͇͙̲͞ͅT͖̼͓̪͢h͏͓̮̻e̬̝̟ͅ ̤̹̝W͙̞̝͔͇͝ͅa͏͓͔̹̼̣l̴͔̰̤̟͔ḽ̫.͕",
     "isDeployed": false,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_Macaj0TKf9i-AM",
     "uid": "6544263656"
   },
   "-OCGc_McrDLYFH19FSLB": {
     "image": "http://dummyimage.com/173x100.png/ff4444/ffffff",
     "assetNo": "0985320273",
+    "type": "",
     "serialNo": "7462189348",
     "modelNo": "O2 Xphone",
     "name": "Roper Technologies, Inc.",
@@ -100,12 +115,13 @@
     "description": "Microsoft Smartphone 2003",
     "notes": "１２３",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_McrDLYFH19FSLB",
     "uid": "9685575991"
   },
   "-OCGc_MeAaH3J_Qz9j53": {
     "image": "http://dummyimage.com/176x100.png/cc0000/ffffff",
     "assetNo": "2485707146",
+    "type": "",
     "serialNo": "5626765530",
     "modelNo": "Allview E2 Jump",
     "name": "Nu Skin Enterprises, Inc.",
@@ -113,12 +129,13 @@
     "description": "Android 4.4.2",
     "notes": "''",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_MeAaH3J_Qz9j53",
     "uid": "2588203078"
   },
   "-OCGc_Mfl77BiPdngla1": {
     "image": "http://dummyimage.com/135x100.png/5fa2dd/ffffff",
     "assetNo": "4367853144",
+    "type": "",
     "serialNo": "0464935024",
     "modelNo": "vivo X60 (China)",
     "name": "Cyclacel Pharmaceuticals, Inc.",
@@ -126,7 +143,7 @@
     "description": "Android 11, OriginOS 1.0",
     "notes": "・(￣∀￣)・:*:",
     "isDeployed": true,
-    "firebaseKey": " ",
+    "firebaseKey": "-OCGc_Mfl77BiPdngla1",
     "uid": "6137821110"
   }
 }
