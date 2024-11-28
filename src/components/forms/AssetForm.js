@@ -47,13 +47,13 @@ function AssetForm({ obj = initialState }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateAsset(formInput).then(() => router.push(`/assets/${obj.firebaseKey}`));
+      updateAsset(formInput).then(() => router.push(`/UserProfile/${obj.uid}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createAsset(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateAsset(patchPayload).then(() => {
-          router.push('/ShowAssets');
+          router.push('/ShowAssets/');
         });
       });
     }

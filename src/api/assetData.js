@@ -73,4 +73,18 @@ const updateAsset = (payload) =>
       .catch(reject);
   });
 
-export { getAllAssets, getAssetsByID, createAsset, updateAsset };
+// Get Single Asset
+const getSingleAsset = (firebaseKey) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/assets/${firebaseKey}.json`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+export { getAllAssets, getAssetsByID, createAsset, updateAsset, getSingleAsset };
