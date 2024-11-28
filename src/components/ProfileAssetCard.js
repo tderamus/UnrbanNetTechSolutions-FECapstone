@@ -4,8 +4,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { deleteSingleAsset } from '../api/assetData';
 
-function ProfileAssetCard({ assetObj }) {
+function ProfileAssetCard({ assetObj, onUpdate }) {
+  const deleteAsset = () => {
+    if (window.confirm(`Delete ${assetObj.assetNo}?`)) {
+      deleteSingleAsset(assetObj.firebaseKey).then(() => onUpdate());
+    }
+  };
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={assetObj.image} alt={assetObj.description} />
@@ -32,7 +39,9 @@ function ProfileAssetCard({ assetObj }) {
         <Card.Link href={`/Assets/edit/${assetObj.firebaseKey}`} passHref>
           EDIT
         </Card.Link>
-        <Card.Link href="#">DELETE</Card.Link>
+        <Card.Link href="#" onClick={deleteAsset}>
+          DELETE
+        </Card.Link>
       </Card.Body>
     </Card>
   );
@@ -51,6 +60,7 @@ ProfileAssetCard.propTypes = {
     firebaseKey: PropTypes.string,
     isDeployed: PropTypes.bool,
   }).isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default ProfileAssetCard;
