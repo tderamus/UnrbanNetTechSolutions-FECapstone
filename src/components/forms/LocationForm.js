@@ -40,7 +40,7 @@ function LocationForm({ obj = initialState }) {
       createLocation(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateLocation(patchPayload).then(() => {
-          router.push('/ShowLocations/page');
+          router.push('/ShowLocations/');
         });
       });
     }
