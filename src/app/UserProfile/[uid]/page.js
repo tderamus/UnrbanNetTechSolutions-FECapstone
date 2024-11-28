@@ -26,7 +26,6 @@ export default function UserProfile() {
     // Get user diaplayName from firebase authentication
     const user = firebase.auth().currentUser;
     if (user) {
-      console.log(user);
       setUserName(user.displayName || 'User');
     }
 

@@ -1,3 +1,5 @@
+'use client';
+
 import PropTypes from 'prop-types';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
@@ -27,7 +29,9 @@ function ProfileAssetCard({ assetObj }) {
       </ListGroup>
       <Card.Body>
         <Card.Link href="#">VIEW</Card.Link>
-        <Card.Link href="#">EDIT</Card.Link>
+        <Card.Link href={`/Assets/edit/${assetObj.firebaseKey}`} passHref>
+          EDIT
+        </Card.Link>
         <Card.Link href="#">DELETE</Card.Link>
       </Card.Body>
     </Card>
@@ -44,6 +48,7 @@ ProfileAssetCard.propTypes = {
     modelNo: PropTypes.string,
     serialNo: PropTypes.string,
     type: PropTypes.string,
+    firebaseKey: PropTypes.string,
     isDeployed: PropTypes.bool,
   }).isRequired,
 };
