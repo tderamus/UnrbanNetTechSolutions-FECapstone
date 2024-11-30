@@ -2,3 +2,14 @@ body {
   background: black;
   color: white;
 }
+
+.user-profile{
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.add-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2vh 2vh;
+}

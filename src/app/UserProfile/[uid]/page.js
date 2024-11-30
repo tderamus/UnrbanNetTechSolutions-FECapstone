@@ -6,11 +6,14 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import ProfileAssetCard from '../../../components/ProfileAssetCard';
 import { getAssetsByID } from '../../../api/assetData';
+import { getLocationsByID } from '../../../api/locationData';
 import ProfileCard from '../../../components/ProfileCard';
+import ProfileLocationCard from '../../../components/ProfileLocationCard';
 
 export default function UserProfile() {
   const [userDevices, setUserDevices] = useState([]);
   const [userName, setUserName] = useState('');
+  const [profileLocations, setProfileLocations] = useState([]);
 
   const getDevicesId = () => {
     getAssetsByID()
@@ -21,7 +24,15 @@ export default function UserProfile() {
         console.error('error fetching data', error);
       });
   };
-
+  const showAllLocationsID = () => {
+    getLocationsByID()
+      .then((data) => {
+        setProfileLocations(data);
+      })
+      .catch((error) => {
+        console.error('error fetching data', error);
+      });
+  };
   useEffect(() => {
     // Get user diaplayName from firebase authentication
     const user = firebase.auth().currentUser;
@@ -31,16 +42,31 @@ export default function UserProfile() {
 
     // Get user assets by UID
     getDevicesId();
+
+    // Get user locations by UID
+    showAllLocationsID();
   }, []);
 
   return (
     <>
-      <div>
+      <div className="user-profile">
         <ProfileCard userData={{ name: userName }} />
       </div>
-      <Link href="/Assets/new" passHref>
-        <Button type="button">Add Managed Assets</Button>
-      </Link>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {profileLocations.map((locations) => (
+          <ProfileLocationCard key={locations.firebaseKey} profileLocationObj={locations} onUpdate={showAllLocationsID} />
+        ))}
+      </div>
+
+      <div className="add-buttons">
+        <Link href="/Assets/new" passHref>
+          <Button type="button">Add Managed Assets</Button>
+        </Link>
+        <Link href="/Locations/new" passHref>
+          <Button type="button">Add Managed Location</Button>
+        </Link>
+      </div>
+
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {userDevices.map((assets) => (
           <ProfileAssetCard key={assets.firebaseKey} assetObj={assets} onUpdate={getDevicesId} />

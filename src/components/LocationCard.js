@@ -10,13 +10,10 @@ export default function LocationCard({ locationObj }) {
     <div>
       <Card style={{ width: '18rem' }}>
         <ListGroup className="list-group-flush">
-          <ListGroup.Item>{locationObj.city}</ListGroup.Item>
-          <ListGroup.Item>{locationObj.state}</ListGroup.Item>
+          <ListGroup.Item>
+            {locationObj.city}, {locationObj.state}
+          </ListGroup.Item>
         </ListGroup>
-        <Card.Body>
-          <Card.Link href="#">EDIT</Card.Link>
-          <Card.Link href="#">DELETE</Card.Link>
-        </Card.Body>
       </Card>
     </div>
   );
