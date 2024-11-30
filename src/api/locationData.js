@@ -73,4 +73,18 @@ const updateLocation = (payload) =>
       .catch(reject);
   });
 
-export { getAllLocations, getLocationsByID, createLocation, updateLocation };
+// Delete Location
+const deleteSingleLocation = (firebaseKey) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/locations/${firebaseKey}.json`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
+export { getAllLocations, getLocationsByID, createLocation, updateLocation, deleteSingleLocation };

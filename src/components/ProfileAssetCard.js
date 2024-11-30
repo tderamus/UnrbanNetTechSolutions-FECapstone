@@ -56,6 +56,7 @@ ProfileAssetCard.propTypes = {
     assetNo: PropTypes.number,
     modelNo: PropTypes.string,
     serialNo: PropTypes.string,
+    locationId: PropTypes.string,
     type: PropTypes.string,
     firebaseKey: PropTypes.string,
     isDeployed: PropTypes.bool,
