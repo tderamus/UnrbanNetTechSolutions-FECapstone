@@ -101,4 +101,18 @@ const deleteSingleAsset = (firebaseKey) =>
       .catch(reject);
   });
 
-export { getAllAssets, getAssetsByID, createAsset, updateAsset, getSingleAsset, deleteSingleAsset };
+// Get Single Asset Location
+const getAssetLocation = (firebaseKey) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/assets.json?orderBy="locationId"&equalTo="${firebaseKey}"`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(Object.values(data)))
+      .catch(reject);
+  });
+
+export { getAllAssets, getAssetsByID, createAsset, updateAsset, getSingleAsset, deleteSingleAsset, getAssetLocation };
