@@ -35,7 +35,9 @@ function ProfileAssetCard({ assetObj, onUpdate }) {
         </p>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">VIEW</Card.Link>
+        <Card.Link href={`/Assets/view/${assetObj.firebaseKey}`} passHref>
+          VIEW
+        </Card.Link>
         <Card.Link href={`/Assets/edit/${assetObj.firebaseKey}`} passHref>
           EDIT
         </Card.Link>
