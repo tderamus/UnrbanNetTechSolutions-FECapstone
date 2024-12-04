@@ -21,8 +21,18 @@
 ----
 # Features:
 * App will have authentication for individual users 
+![https://github.com/tderamus/UrbanNetTechSolutions-FECapstone/blob/main/UNProfilePage.png]
+![https://github.com/tderamus/UrbanNetTechSolutions-FECapstone/blob/main/UNProfilePage2.png]
+
 * App will have registration for new application users
 * App will facilitate CREATE, READ, UPDATE, and DELETE functions on user specific assets
+
+![https://github.com/tderamus/UrbanNetTechSolutions-FECapstone/blob/main/UNCreateAssetForm.png]
+
+![https://github.com/tderamus/UrbanNetTechSolutions-FECapstone/blob/main/UNCreateLocationForm.png]
+
+![https://github.com/tderamus/UrbanNetTechSolutions-FECapstone/blob/main/UNEDLinks.png]
+
 * App will handle math functions on cost with totals 
 * App will filter asset details by location and users 
 * App will maintain relationships between managers, employees, and assets
