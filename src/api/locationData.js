@@ -82,19 +82,29 @@ const getSingleLocation = (firebaseKey) =>
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => {
-        console.log('Response status:', response.status);
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
-        console.log('Fetched data:', data);
-        resolve(data);
+        if (data) {
+          resolve(Object.values(data));
+        } else {
+          resolve([]);
+        }
       })
-      .catch((error) => {
-        console.error('Fetch error:', error);
-        reject(error);
-      });
+      .catch(reject);
   });
+
+// const getSingleLocation = (firebaseKey) =>
+//   new Promise((resolve, reject) => {
+//     fetch(`${endpoint}/locations/${firebaseKey}.json`, {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     })
+//       .then((response) => response.json())
+//       .then((data) => resolve(data))
+//       .catch(reject);
+//   });
 
 // Delete Location
 const deleteSingleLocation = (firebaseKey) =>

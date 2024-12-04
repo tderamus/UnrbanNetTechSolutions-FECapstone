@@ -1,9 +1,9 @@
 import { getSingleAsset, getAssetLocation } from './assetData';
 import { getSingleLocation } from './locationData';
 
-const getAssetDetails = (assetFirebaseKey) =>
+const getAssetDetails = (firebaseKey) =>
   new Promise((resolve, reject) => {
-    getSingleAsset(assetFirebaseKey)
+    getSingleAsset(firebaseKey)
       .then((assetObject) => {
         console.log('Asset Object', assetObject);
         getSingleLocation(assetObject.locationId).then((locationObject) => {
@@ -14,9 +14,9 @@ const getAssetDetails = (assetFirebaseKey) =>
       .catch((error) => reject(error));
   });
 
-const getLocationDetails = (locationFirebaseKey) =>
+const getLocationDetails = (firebaseKey) =>
   new Promise((resolve, reject) => {
-    Promise.all([getSingleLocation(locationFirebaseKey), getAssetLocation(locationFirebaseKey)])
+    Promise.all([getSingleLocation(firebaseKey), getAssetLocation(firebaseKey)])
       .then(([locationObject, locationArray]) => {
         resolve({ ...locationObject, locations: locationArray });
       })
