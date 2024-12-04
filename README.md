@@ -10,7 +10,7 @@
 
 ## [ERD](https://dbdiagram.io/d/UrbanNet-Tech-Solutions-673551ade9daa85aca6233e2)
 
-## [TODO: Deployed Application Netlify]()
+## [Deployed Application Netlify](https://urbannetassetmanager.netlify.app/)
 
 ## [Project Board](https://github.com/users/tderamus/projects/6/views/3)
 
@@ -29,4 +29,4 @@
 
 #### TODO ADD Project Screenshots
 
-## [TODO: Loom Video]()
+## [Loom Video](https://www.loom.com/share/d70104412015477eadbc74268a4a6082?sid=944f90df-eddd-49b1-b270-d2d6885913af)
