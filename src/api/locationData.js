@@ -74,25 +74,6 @@ const updateLocation = (payload) =>
   });
 
 // Get Single Location
-const getSingleLocation = (firebaseKey) =>
-  new Promise((resolve, reject) => {
-    fetch(`${endpoint}/locations/${firebaseKey}.json`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) {
-          resolve(Object.values(data));
-        } else {
-          resolve([]);
-        }
-      })
-      .catch(reject);
-  });
-
 // const getSingleLocation = (firebaseKey) =>
 //   new Promise((resolve, reject) => {
 //     fetch(`${endpoint}/locations/${firebaseKey}.json`, {
@@ -102,9 +83,28 @@ const getSingleLocation = (firebaseKey) =>
 //       },
 //     })
 //       .then((response) => response.json())
-//       .then((data) => resolve(data))
+//       .then((data) => {
+//         if (data) {
+//           resolve(Object.values(data));
+//         } else {
+//           resolve([]);
+//         }
+//       })
 //       .catch(reject);
 //   });
+
+const getSingleLocation = (firebaseKey) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/locations/${firebaseKey}.json`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
 
 // Delete Location
 const deleteSingleLocation = (firebaseKey) =>

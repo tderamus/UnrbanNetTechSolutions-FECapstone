@@ -18,6 +18,7 @@ const getLocationDetails = (firebaseKey) =>
   new Promise((resolve, reject) => {
     Promise.all([getSingleLocation(firebaseKey), getAssetLocation(firebaseKey)])
       .then(([locationObject, locationArray]) => {
+        console.log('location object detail', locationObject);
         resolve({ ...locationObject, locations: locationArray });
       })
       .catch((error) => reject(error));

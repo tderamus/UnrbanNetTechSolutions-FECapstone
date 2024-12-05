@@ -6,11 +6,11 @@ import { Card, ListGroup } from 'react-bootstrap';
 import { getAssetDetails, getLocationDetails } from '@/api/mergedData';
 import { getAssetLocation } from '../../../../api/assetData';
 import ProfileAssetCard from '../../../../components/ProfileAssetCard';
-// import { getSingleLocation } from '../../../../api/locationData';
+import { getSingleLocation } from '../../../../api/locationData';
 
 export default function ViewAssets({ params }) {
   const [assetDetails, setAssetDetails] = useState({});
-  const [assetLocations, setAssetLocations] = useState(null);
+  const [assetLocations, setAssetLocations] = useState([]);
 
   // grab firebaseKey from url
   const { firebaseKey } = params;
@@ -34,9 +34,9 @@ export default function ViewAssets({ params }) {
     });
   };
 
-  // getSingleLocation(firebaseKey).then((data) => {
-  //   console.log('single location data', data);
-  // });
+  getSingleLocation(firebaseKey).then((data) => {
+    console.log('single location data', data);
+  });
 
   return (
     <>

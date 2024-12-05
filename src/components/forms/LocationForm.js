@@ -34,7 +34,7 @@ function LocationForm({ obj = initialState }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateLocation(formInput).then(() => router.push(`/locations/${obj.firebaseKey}`));
+      updateLocation(formInput).then(() => router.push('/ShowLocations/'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createLocation(payload).then(({ name }) => {
@@ -47,23 +47,21 @@ function LocationForm({ obj = initialState }) {
   };
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit} className="text-black">
-        <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Location</h2>
+    <Form onSubmit={handleSubmit} className="text-black">
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Location</h2>
 
-        {/* CITY INPUT  */}
-        <FloatingLabel controlId="floatingInput3" label="City" className="mb-3">
-          <Form.Control type="text" placeholder="Enter Name Of City" name="city" value={formInput.city} onChange={handleChange} required />
-        </FloatingLabel>
+      {/* CITY INPUT  */}
+      <FloatingLabel controlId="floatingInput3" label="City" className="mb-3">
+        <Form.Control type="text" placeholder="Enter Name Of City" name="city" value={formInput.city} onChange={handleChange} required />
+      </FloatingLabel>
 
-        {/* STATE INPUT  */}
-        <FloatingLabel controlId="floatingInput3" label="State" className="mb-3">
-          <Form.Control type="text" placeholder="Enter Name Of State" name="state" value={formInput.state} onChange={handleChange} required />
-        </FloatingLabel>
+      {/* STATE INPUT  */}
+      <FloatingLabel controlId="floatingInput3" label="State" className="mb-3">
+        <Form.Control type="text" placeholder="Enter Name Of State" name="state" value={formInput.state} onChange={handleChange} required />
+      </FloatingLabel>
 
-        <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Location</Button>
-      </Form>
-    </div>
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Location</Button>
+    </Form>
   );
 }
 

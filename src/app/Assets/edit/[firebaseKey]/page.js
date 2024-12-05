@@ -26,6 +26,10 @@ export default function EditAsset({ params }) {
       .catch((error) => console.error('Error fetching asset:', error));
   }, [firebaseKey]);
 
+  useEffect(() => {
+    console.log('assset edit data', editAsset);
+  }, [editAsset]);
+
   // Pass the asset object to the form
   return <AssetForm obj={editAsset} />;
 }
