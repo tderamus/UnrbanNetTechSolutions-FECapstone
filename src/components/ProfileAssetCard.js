@@ -21,7 +21,7 @@ function ProfileAssetCard({ assetObj, onUpdate }) {
         <Card.Text>{assetObj.notes}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>{assetObj.assetNo}</ListGroup.Item>
+        <ListGroup.Item> Asset Number: {assetObj.assetNo}</ListGroup.Item>
         <ListGroup.Item>{assetObj.modelNo}</ListGroup.Item>
         <ListGroup.Item>{assetObj.serialNo}</ListGroup.Item>
         <ListGroup.Item>{assetObj.type}</ListGroup.Item>
