@@ -67,7 +67,7 @@ export default function UserProfile() {
         </Link>
       </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div className="profile-asset-card">
         {userDevices.map((assets) => (
           <ProfileAssetCard key={assets.firebaseKey} assetObj={assets} onUpdate={getDevicesId} />
         ))}

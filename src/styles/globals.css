@@ -5,7 +5,7 @@ body {
 
 .user-profile{
   text-align: center;
-  margin: 10px 10px;
+  margin: 50px;
 }
 
 .add-buttons {
@@ -13,3 +13,48 @@ body {
   justify-content: space-evenly;
   margin: 2vh 2vh;
 }
+
+.profile-asset-card, .show-asset-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.asset-view-card{
+display: flex;
+justify-content: center;
+text-align: center;
+margin-top: 5rem;
+}
+
+.card-image {
+  height: 8rem;
+}
+
+/* .list-group {
+  align-items: center;
+} */
+
+.asset-actions {
+  background-color: black;
+}
+
+.asset-notes {
+  height: 2vh;
+}
+
+.profile-asset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+/* .card-actions {
+  margin-top: 10px;
+} */
+/* .asset-togggle{
+  color: red;
+} */

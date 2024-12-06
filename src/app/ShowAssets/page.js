@@ -72,7 +72,7 @@ export default function ShowAssets() {
           className="search-input"
         />
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div className="show-asset-card">
         {searchResults.map((assets) => (
           <AssetCard key={assets.firebaseKey} assetObj={assets} onUpdate={getDevices} />
         ))}

@@ -20,7 +20,6 @@ export default function EditAsset({ params }) {
 
     getSingleAsset(firebaseKey)
       .then((data) => {
-        // console.log('Asset Data:', data);
         setEditAsset(data);
       })
       .catch((error) => console.error('Error fetching asset:', error));
