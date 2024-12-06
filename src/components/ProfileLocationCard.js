@@ -16,12 +16,12 @@ export default function ProfileLocationCard({ profileLocationObj, onUpdate }) {
   return (
     <div>
       <Card style={{ width: '18rem' }}>
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>
+        <ListGroup className="list-group-flush ">
+          <ListGroup.Item className="location-data">
             {profileLocationObj.city}, {profileLocationObj.state}
-            <Card.Link href={`/Locations/edit/${profileLocationObj.firebaseKey}`}>EDIT</Card.Link>
+            <Card.Link href={`/Locations/edit/${profileLocationObj.firebaseKey}`}>🖋</Card.Link>
             <Card.Link href="#" onClick={deleteLocation}>
-              DELETE
+              ❌
             </Card.Link>
           </ListGroup.Item>
         </ListGroup>

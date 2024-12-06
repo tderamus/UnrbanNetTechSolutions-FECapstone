@@ -52,7 +52,7 @@ export default function UserProfile() {
       <div className="user-profile">
         <ProfileCard userData={{ name: userName }} />
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div className="profile-location-card">
         {profileLocations.map((locations) => (
           <ProfileLocationCard key={locations.firebaseKey} profileLocationObj={locations} onUpdate={showAllLocationsID} />
         ))}

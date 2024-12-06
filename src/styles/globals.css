@@ -21,6 +21,13 @@ body {
   gap: 2rem;
 }
 
+.profile-location-card {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
 .asset-view-card{
 display: flex;
 justify-content: center;
@@ -32,9 +39,9 @@ margin-top: 5rem;
   height: 8rem;
 }
 
-/* .list-group {
-  align-items: center;
-} */
+a.card-link {
+  margin: 0 0 0 15px;
+}
 
 .asset-actions {
   background-color: black;
@@ -52,9 +59,8 @@ margin-top: 5rem;
   color: black;
 }
 
-/* .card-actions {
-  margin-top: 10px;
-} */
-/* .asset-togggle{
-  color: red;
-} */
+.location-data {
+  background-color: black;
+  color: white;
+  margin: 1rem;
+}
