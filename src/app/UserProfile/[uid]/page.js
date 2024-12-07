@@ -40,7 +40,6 @@ export default function UserProfile() {
   const showAllEmployeesID = () => {
     getEmployeesByID()
       .then((data) => {
-        console.log('single employee', data);
         setProfileEmployees(data);
       })
       .catch((error) => {

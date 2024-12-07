@@ -1,7 +1,8 @@
 import React from 'react';
+import EmployeeForm from '../../../components/forms/EmployeeForm';
 
 function AddEmployee() {
-  return <div>Welcome to the add new employee page!</div>;
+  return <EmployeeForm />;
 }
 
 export default AddEmployee;

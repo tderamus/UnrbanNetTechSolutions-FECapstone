@@ -37,7 +37,7 @@ body {
   margin: auto;
 }
 
-.profile-location-card, .emmployee-card{
+.profile-location-card, .profile-employee-card, .emmployee-card{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -95,7 +95,7 @@ a.card-link {
 
 /* Form Styles */
 
-.asset-form , .location-form{
+.asset-form , .location-form, .employee-form{
   margin: auto;
   max-width: 600px;
 }

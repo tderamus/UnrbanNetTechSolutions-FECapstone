@@ -2,71 +2,67 @@
   "-OCGel2kVfHkORkZr7Pe": {
     "city": "Detroit",
     "firebaseKey": "2eb4064f-3702-4381-8cbe-c4a0cb3b1b16",
-    "id": "24-964-0167",
     "state": "MI",
     "uid": "YB8kLgQGS1RJK1y4oL4HuXAc6wH2"
   },
   "-OCGel2lQNVSRdSma3ue": {
     "city": "Washington",
     "firebaseKey": "1e7a1033-f4ab-4819-baab-b54d4d5da2b6",
-    "id": "75-382-9037",
     "state": "DC",
     "uid": "YB8kLgQGS1RJK1y4oL4HuXAc6wH2"
   },
   "-OCGel2lQNVSRdSma3uf": {
     "city": "Baton Rouge",
     "firebaseKey": "90e77b33-c562-4919-8121-d33deaa9dbc6",
-    "id": "37-461-2447",
     "state": "LA",
     "uid": "YB8kLgQGS1RJK1y4oL4HuXAc6wH2"
   },
   "-OCGel2m90PQsk3m5LXd": {
     "city": "Springfield",
     "firebaseKey": "3f7b07ae-b6e2-4959-bf6f-e92b16fc59b1",
-    "id": "47-685-8653",
     "state": "IL",
     "uid": "YB8kLgQGS1RJK1y4oL4HuXAc6wH2"
   },
   "-OCGel2m90PQsk3m5LXe": {
     "city": "Baltimore",
     "firebaseKey": "1697c82b-0b81-46e9-8644-e49da15f1fd2",
-    "id": "87-494-0655",
     "state": "MD",
     "uid": "caNVe22QDfTcoFZY3T2k8xNQYfH3"
   },
   "-OCGel2nnYIQnbux_b5b": {
     "city": "Erie",
     "firebaseKey": "d8ce81c1-0a71-4d01-81bb-ebb1d4055d9f",
-    "id": "90-909-5310",
     "state": "PA",
     "uid": "caNVe22QDfTcoFZY3T2k8xNQYfH3"
   },
   "-OCGel2nnYIQnbux_b5c": {
     "city": "Lexington",
     "firebaseKey": "ab48d0f3-e421-4007-84a1-163878c12e10",
-    "id": "09-961-5392",
     "state": "KY",
     "uid": "caNVe22QDfTcoFZY3T2k8xNQYfH3"
   },
   "-OCGel2oaAAaru97jeDu": {
     "city": "Suffolk",
     "firebaseKey": "cb09aaad-736c-44c8-b161-7328dd533c08",
-    "id": "58-186-3703",
     "state": "VA",
     "uid": "caNVe22QDfTcoFZY3T2k8xNQYfH3"
   },
   "-OCGel2oaAAaru97jeDv": {
     "city": "Chicago",
     "firebaseKey": "65a398df-ff08-47ac-8c55-a441eb417be8",
-    "id": "43-466-2528",
     "state": "IL",
     "uid": "JTrhVwyUSiN58iaM7oNN9gLDQYZ2"
   },
   "-OCGel2p70zyRvMcaSmS": {
     "city": "Huntsville",
     "firebaseKey": "fb0e5c0d-40e7-4780-9e41-359c4fd4b53c",
-    "id": "00-781-8980",
     "state": "AL",
     "uid": "JTrhVwyUSiN58iaM7oNN9gLDQYZ2"
+  },
+  "-ODXpfopmyPFGSdb5voB": {
+    "city": "Townsend",
+    "firebaseKey": "-ODXpfopmyPFGSdb5voB",
+    "state": "NM",
+    "uid": "YB8kLgQGS1RJK1y4oL4HuXAc6wH2"
   }
 }
