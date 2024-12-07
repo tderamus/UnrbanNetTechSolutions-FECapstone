@@ -17,22 +17,7 @@ function ProfileAssetCard({ assetObj, onUpdate }) {
       <Card.Img variant="top" src={assetObj.image} alt={assetObj.description} className="card-image" />
       <Card.Body>
         <Card.Title>Name: {assetObj.name}</Card.Title>
-        {/* <Card.Text className='asset-notes'>Notes: {assetObj.notes}</Card.Text> */}
       </Card.Body>
-      {/* <ListGroup className="list-group-flush list-group">
-        <ListGroup.Item> Asset No: {assetObj.assetNo}</ListGroup.Item>
-        <ListGroup.Item>Model No: {assetObj.modelNo}</ListGroup.Item>
-        <ListGroup.Item>Serial No: {assetObj.serialNo}</ListGroup.Item>
-        <ListGroup.Item>Type: {assetObj.type}</ListGroup.Item>
-        <p className='card-text bold asset-toggle'>
-          {assetObj.isDeployed && (
-            <span>
-              DEPLOYED
-              <br />
-            </span>
-          )}
-        </p>
-      </ListGroup> */}
       <div className="card-footer card-actions">
         <Card.Body className="asset-actions">
           <Card.Link href={`/Assets/view/${assetObj.firebaseKey}`} passHref>

@@ -34,7 +34,7 @@ function LocationForm({ obj = initialState }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateLocation(formInput).then(() => router.push('/ShowLocations/'));
+      updateLocation(formInput).then(() => router.push(`/UserProfile/${obj.uid}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createLocation(payload).then(({ name }) => {
@@ -47,7 +47,7 @@ function LocationForm({ obj = initialState }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="text-black">
+    <Form onSubmit={handleSubmit} className="text-black location-form">
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Location</h2>
 
       {/* CITY INPUT  */}

@@ -60,7 +60,7 @@ function AssetForm({ obj = initialState }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="text-black">
+    <Form onSubmit={handleSubmit} className="text-black asset-form">
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Asset</h2>
 
       {/* ASSET IMAGE */}

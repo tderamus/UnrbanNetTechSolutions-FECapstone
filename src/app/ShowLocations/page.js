@@ -21,7 +21,7 @@ export default function ShowLocations() {
     showAllLocations();
   }, []);
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+    <div className="profile-location-card">
       {assetLocations.map((locations) => (
         <LocationCard key={locations.firebaseKey} locationObj={locations} />
       ))}

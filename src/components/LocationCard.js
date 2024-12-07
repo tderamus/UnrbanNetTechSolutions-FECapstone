@@ -10,7 +10,7 @@ export default function LocationCard({ locationObj }) {
     <div>
       <Card style={{ width: '18rem' }}>
         <ListGroup className="list-group-flush">
-          <ListGroup.Item>
+          <ListGroup.Item className="location-data">
             {locationObj.city}, {locationObj.state}
           </ListGroup.Item>
         </ListGroup>

@@ -60,7 +60,7 @@ export default function ShowAssets() {
       <div className="search-bar-container">
         <input
           style={{
-            width: '600px',
+            width: '400px',
             display: 'block',
             margin: '0 auto',
             borderRadius: '7px',

@@ -1,24 +1,46 @@
 body {
-  background: black;
+  background: #1E0A2E;
   color: white;
 }
 
+/* Page Styles */
 .user-profile{
   text-align: center;
   margin: 50px;
 }
 
-.add-buttons {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 2vh 2vh;
+.search-bar-container {
+  margin: 3rem 3rem;
 }
 
+.add-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin: 3rem;
+}
+
+/* ############################################################ */
+
+/* Card Styles */
 .profile-asset-card, .show-asset-card{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.profile-location-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 5rem;
+  max-width: 1700px;
 }
 
 .asset-view-card{
@@ -32,16 +54,16 @@ margin-top: 5rem;
   height: 8rem;
 }
 
-/* .list-group {
-  align-items: center;
-} */
+a.card-link {
+  margin: 0 0 0 15px;
+}
 
 .asset-actions {
   background-color: black;
 }
 
 .asset-notes {
-  height: 2vh;
+  height: 15vh;
 }
 
 .profile-asset {
@@ -52,9 +74,24 @@ margin-top: 5rem;
   color: black;
 }
 
-/* .card-actions {
-  margin-top: 10px;
-} */
-/* .asset-togggle{
-  color: red;
-} */
+.location-data {
+  background-color: black;
+  color: white;
+  margin: 1rem;
+}
+/* ##################################################################### */
+
+/* Nav Bar Styles */
+
+.sign-out {
+  margin-left: 35rem;
+}
+
+/* ###################################################################### */
+
+/* Form Styles */
+
+.asset-form , .location-form{
+  margin: auto;
+  max-width: 600px;
+}
