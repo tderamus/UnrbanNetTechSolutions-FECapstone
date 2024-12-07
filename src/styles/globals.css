@@ -13,6 +13,10 @@ body {
   margin: 3rem 3rem;
 }
 
+.user-locations, .user-assets, .user-employees {
+  text-align: center;
+}
+
 .add-buttons {
   display: flex;
   justify-content: center;
@@ -33,7 +37,7 @@ body {
   margin: auto;
 }
 
-.profile-location-card {
+.profile-location-card, .profile-employee-card, .emmployee-card{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -74,7 +78,7 @@ a.card-link {
   color: black;
 }
 
-.location-data {
+.location-data, .employee-data {
   background-color: black;
   color: white;
   margin: 1rem;
@@ -84,14 +88,14 @@ a.card-link {
 /* Nav Bar Styles */
 
 .sign-out {
-  margin-left: 35rem;
+  margin-left: 20rem;
 }
 
 /* ###################################################################### */
 
 /* Form Styles */
 
-.asset-form , .location-form{
+.asset-form , .location-form, .employee-form{
   margin: auto;
   max-width: 600px;
 }

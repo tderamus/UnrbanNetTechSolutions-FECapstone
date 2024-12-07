@@ -29,6 +29,12 @@ export default function NavBar() {
             <Link className="nav-link" href="/Locations/new">
               Add Locations
             </Link>
+            <Link className="nav-link" href="/ShowEmployees/">
+              All Employees
+            </Link>
+            <Link className="nav-link" href="/Employees/new">
+              Add Employees
+            </Link>
             <Button className="sign-out" variant="danger" onClick={signOut}>
               Sign Out
             </Button>

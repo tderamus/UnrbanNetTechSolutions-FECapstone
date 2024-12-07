@@ -1,76 +1,93 @@
-// 'use client';
+'use client';
 
-// import React, { useState, useEffect } from 'react';
-// import { useRouter } from 'next/navigation';
-// import PropTypes from 'prop-types';
-// import { Form, FloatingLabel, Button } from 'react-bootstrap';
-// import { useAuth } from '../../utils/context/authContext';
-// import { createLocation, getAllLocations, updateLocation } from '../../api/locationData';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import PropTypes from 'prop-types';
+import { Form, FloatingLabel, Button } from 'react-bootstrap';
+import { useAuth } from '../../utils/context/authContext';
+import { createEmployee, updateEmployee } from '../../api/employeeData';
+import { getAllLocations } from '../../api/locationData';
 
-// const initialState = {
-//   city: '',
-//   state: '',
-// };
+const initialState = {
+  first_name: '',
+  last_name: '',
+  locationId: '',
+};
 
-// function LocationForm({ obj = initialState }) {
-//   const [formInput, setFormInput] = useState(obj);
-//   const router = useRouter();
-//   const { user } = useAuth();
+function EmployeeForm({ obj = initialState }) {
+  const [formInput, setFormInput] = useState(obj);
+  const [location, setLocation] = useState([]);
+  const router = useRouter();
+  const { user } = useAuth();
 
-//   useEffect(() => {
-//     getAllLocations(user.uid);
+  useEffect(() => {
+    getAllLocations(user.uid).then((data) => {
+      setLocation(data);
+    });
 
-//     if (obj.firebaseKey) setFormInput(obj);
-//   }, [obj, user]);
+    if (obj.firebaseKey) setFormInput(obj);
+  }, [obj, user]);
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormInput((prevState) => ({
-//       ...prevState,
-//       [name]: value,
-//     }));
-//   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormInput((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (obj.firebaseKey) {
-//       updateLocation(formInput).then(() => router.push(`/UserProfile/${obj.uid}`));
-//     } else {
-//       const payload = { ...formInput, uid: user.uid };
-//       createLocation(payload).then(({ name }) => {
-//         const patchPayload = { firebaseKey: name };
-//         updateLocation(patchPayload).then(() => {
-//           router.push('/ShowLocations/');
-//         });
-//       });
-//     }
-//   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (obj.firebaseKey) {
+      updateEmployee(formInput).then(() => router.push(`/UserProfile/${obj.uid}`));
+    } else {
+      const payload = { ...formInput, uid: user.uid };
+      createEmployee(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
+        updateEmployee(patchPayload).then(() => {
+          router.push(`/UserProfile/${obj.uid}`);
+        });
+      });
+    }
+  };
 
-//   return (
-//     <Form onSubmit={handleSubmit} className="text-black location-form">
-//       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Location</h2>
+  return (
+    <Form onSubmit={handleSubmit} className="text-black employee-form">
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Employee</h2>
 
-//       {/* CITY INPUT  */}
-//       <FloatingLabel controlId="floatingInput3" label="City" className="mb-3">
-//         <Form.Control type="text" placeholder="Enter Name Of City" name="city" value={formInput.city} onChange={handleChange} required />
-//       </FloatingLabel>
+      {/* FIRSTNAME INPUT  */}
+      <FloatingLabel controlId="floatingInput3" label="First_Name" className="mb-3">
+        <Form.Control type="text" placeholder="Enter employee first name" name="first_name" value={formInput.first_name} onChange={handleChange} required />
+      </FloatingLabel>
 
-//       {/* STATE INPUT  */}
-//       <FloatingLabel controlId="floatingInput3" label="State" className="mb-3">
-//         <Form.Control type="text" placeholder="Enter Name Of State" name="state" value={formInput.state} onChange={handleChange} required />
-//       </FloatingLabel>
+      {/* LASTNAME INPUT  */}
+      <FloatingLabel controlId="floatingInput3" label="Last_Name" className="mb-3">
+        <Form.Control type="text" placeholder="Enter employee last name" name="last_name" value={formInput.last_name} onChange={handleChange} required />
+      </FloatingLabel>
 
-//       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Location</Button>
-//     </Form>
-//   );
-// }
+      {/* LOCATION SELECT  */}
+      <FloatingLabel controlId="floatingSelect" label="Employee Location">
+        <Form.Select aria-label="Employee Location" name="locationId" onChange={handleChange} className="mb-3" value={formInput.locationId || ''} required>
+          <option value="">Select a Location</option>
+          {location.map((employeeLocation) => (
+            <option key={employeeLocation.firebaseKey} value={employeeLocation.firebaseKey}>
+              {employeeLocation.city} {employeeLocation.state}
+            </option>
+          ))}
+        </Form.Select>
+      </FloatingLabel>
 
-// LocationForm.propTypes = {
-//   obj: PropTypes.shape({
-//     city: PropTypes.string,
-//     state: PropTypes.string,
-//     firebaseKey: PropTypes.string,
-//   }),
-// };
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Employee</Button>
+    </Form>
+  );
+}
 
-// export default LocationForm;
+EmployeeForm.propTypes = {
+  obj: PropTypes.shape({
+    city: PropTypes.string,
+    state: PropTypes.string,
+    firebaseKey: PropTypes.string,
+  }),
+};
+
+export default EmployeeForm;
