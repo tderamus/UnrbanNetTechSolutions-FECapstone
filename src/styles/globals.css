@@ -1,31 +1,46 @@
 body {
-  background: black;
+  background: #1E0A2E;
   color: white;
 }
 
+/* Page Styles */
 .user-profile{
   text-align: center;
   margin: 50px;
 }
 
-.add-buttons {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 2vh 2vh;
+.search-bar-container {
+  margin: 3rem 3rem;
 }
 
+.add-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin: 3rem;
+}
+
+/* ############################################################ */
+
+/* Card Styles */
 .profile-asset-card, .show-asset-card{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  max-width: 1600px;
+  margin: auto;
 }
 
 .profile-location-card {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 1rem;
+  gap: 2rem;
+  margin: 5rem;
+  max-width: 1700px;
 }
 
 .asset-view-card{
@@ -48,7 +63,7 @@ a.card-link {
 }
 
 .asset-notes {
-  height: 2vh;
+  height: 15vh;
 }
 
 .profile-asset {
@@ -63,4 +78,9 @@ a.card-link {
   background-color: black;
   color: white;
   margin: 1rem;
+}
+/* ##################################################################### */
+
+.sign-out {
+  margin-left: 35rem;
 }
