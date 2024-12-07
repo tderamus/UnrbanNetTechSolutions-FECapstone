@@ -25,9 +25,6 @@ export default function ProfileLocationCard({ profileLocationObj, onUpdate }) {
             </Card.Link>
           </ListGroup.Item>
         </ListGroup>
-        {/* <Card.Body>
-          
-        </Card.Body> */}
       </Card>
     </div>
   );

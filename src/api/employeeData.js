@@ -26,7 +26,7 @@ const getAllEmployees = () =>
 // Get Locations By UID
 const getEmployeesByID = () =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/locations.json?orderBy="uid"&equalTo="${firebase.auth().currentUser.uid}"`, {
+    fetch(`${endpoint}/employees.json?orderBy="uid"&equalTo="${firebase.auth().currentUser.uid}"`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const getEmployeesByID = () =>
 // Create New Location
 const createEmployee = (payload) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/locations.json`, {
+    fetch(`${endpoint}/employees.json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const createEmployee = (payload) =>
 // Update Location
 const updateEmployee = (payload) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/locations/${payload.firebaseKey}.json`, {
+    fetch(`${endpoint}/employees/${payload.firebaseKey}.json`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const updateEmployee = (payload) =>
 
 const getSingleEmployee = (firebaseKey) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/locations/${firebaseKey}.json`, {
+    fetch(`${endpoint}/employees/${firebaseKey}.json`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -107,9 +107,9 @@ const getSingleEmployee = (firebaseKey) =>
   });
 
 // Delete Location
-const deleteSingleLocation = (firebaseKey) =>
+const deleteSingleEmployee = (firebaseKey) =>
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/locations/${firebaseKey}.json`, {
+    fetch(`${endpoint}/employees/${firebaseKey}.json`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -120,4 +120,4 @@ const deleteSingleLocation = (firebaseKey) =>
       .catch(reject);
   });
 
-export { getAllEmployees, getEmployeesByID, createEmployee, updateEmployee, getSingleEmployee, deleteSingleLocation };
+export { getAllEmployees, getEmployeesByID, createEmployee, updateEmployee, getSingleEmployee, deleteSingleEmployee };
