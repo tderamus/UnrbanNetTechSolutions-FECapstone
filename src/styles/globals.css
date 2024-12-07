@@ -81,6 +81,17 @@ a.card-link {
 }
 /* ##################################################################### */
 
+/* Nav Bar Styles */
+
 .sign-out {
   margin-left: 35rem;
+}
+
+/* ###################################################################### */
+
+/* Form Styles */
+
+.asset-form , .location-form{
+  margin: auto;
+  max-width: 600px;
 }

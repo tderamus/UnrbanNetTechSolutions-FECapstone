@@ -47,7 +47,7 @@ function LocationForm({ obj = initialState }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="text-black">
+    <Form onSubmit={handleSubmit} className="text-black location-form">
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Location</h2>
 
       {/* CITY INPUT  */}
