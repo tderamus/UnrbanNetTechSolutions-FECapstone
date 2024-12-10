@@ -78,7 +78,7 @@ a.card-link {
   color: black;
 }
 
-.location-data, .employee-data {
+.location-data, .employee-data, .deployed{
   background-color: black;
   color: white;
   margin: 1rem;

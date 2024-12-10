@@ -9,6 +9,7 @@ import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { createAsset, updateAsset } from '../../api/assetData';
 import { getAllLocations } from '../../api/locationData';
+import { getAllEmployees } from '../../api/employeeData';
 
 const initialState = {
   image: ' ',
@@ -20,17 +21,24 @@ const initialState = {
   type: ' ',
   isDeployed: ' ',
   locationId: ' ',
+  price: ' ',
+  assignment: ' ',
 };
 
 function AssetForm({ obj = initialState }) {
   const [formInput, setFormInput] = useState(obj);
   const [location, setLocation] = useState([]);
+  const [employee, setEmployee] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     getAllLocations(user.uid).then((data) => {
       setLocation(data);
+    });
+
+    getAllEmployees(user.uid).then((data) => {
+      setEmployee(data);
     });
 
     if (obj.firebaseKey) setFormInput(obj);
@@ -88,6 +96,18 @@ function AssetForm({ obj = initialState }) {
         <Form.Control type="text" placeholder="Enter asset name" name="name" value={formInput.name} onChange={handleChange} required />
       </FloatingLabel>
 
+      {/* ASSIGNMENT SELECT  */}
+      <FloatingLabel controlId="floatingSelect" label="Assignment">
+        <Form.Select aria-label="Assignment" name="assignment" onChange={handleChange} className="mb-3" value={formInput.assignment || ''} required>
+          <option value="">Asset assigned to:</option>
+          {employee.map((assigedEmployee) => (
+            <option key={assigedEmployee.firebaseKey} value={assigedEmployee.firebaseKey}>
+              {assigedEmployee.first_name} {assigedEmployee.last_name}
+            </option>
+          ))}
+        </Form.Select>
+      </FloatingLabel>
+
       {/* ASSET TYPE RADIO BUTTONS */}
       <div className="mb-3">
         <Form.Label className="text-white">Asset Type</Form.Label>
@@ -113,6 +133,11 @@ function AssetForm({ obj = initialState }) {
       {/* NOTES TEXTAREA  */}
       <FloatingLabel controlId="floatingTextarea" label="Notes" className="mb-3">
         <Form.Control as="textarea" placeholder="Enter asset deployment notes" style={{ height: '100px' }} name="notes" value={formInput.notes} onChange={handleChange} required />
+      </FloatingLabel>
+
+      {/* PRICE INPUT  */}
+      <FloatingLabel controlId="floatingInput3" label="Asset Price" className="mb-3">
+        <Form.Control type="text" placeholder="Enter price" name="price" value={formInput.price} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
@@ -146,6 +171,7 @@ AssetForm.propTypes = {
     modelNo: PropTypes.string,
     serialNo: PropTypes.string,
     type: PropTypes.string,
+    price: PropTypes.string,
     isDeployed: PropTypes.bool,
     locationId: PropTypes.string,
   }).isRequired,
