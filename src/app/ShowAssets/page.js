@@ -31,11 +31,13 @@ export default function ShowAssets() {
     }
   };
 
-  // Enrich devices with location city
+  // Combine devices with location city
   useEffect(() => {
     if (devices.length && locations.length) {
       const assetsLocs = devices.map((device) => {
         const location = locations.find((loc) => loc.firebaseKey === device.locationId);
+        // console.log('location data', location);
+        // console.log('device data', device);
         return { ...device, locationCity: location?.city || 'Unknown' };
       });
       setassetsLocations(assetsLocs);

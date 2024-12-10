@@ -1,4 +1,5 @@
 import { getSingleAsset, getAssetLocation } from './assetData';
+import { getSingleEmployee } from './employeeData';
 import { getSingleLocation } from './locationData';
 
 const getAssetDetails = (firebaseKey) =>
@@ -6,9 +7,10 @@ const getAssetDetails = (firebaseKey) =>
     getSingleAsset(firebaseKey)
       .then((assetObject) => {
         console.log('Asset Object', assetObject);
-        getSingleLocation(assetObject.locationId).then((locationObject) => {
+        Promise.all([getSingleLocation(assetObject.locationId), getSingleEmployee(assetObject.assignment)]).then(([locationObject, employeeObject]) => {
           console.log('Location Object', locationObject);
-          resolve({ locationObject, ...assetObject });
+          console.log('Employee Object', employeeObject);
+          resolve({ locationObject, employeeObject, ...assetObject });
         });
       })
       .catch((error) => reject(error));
