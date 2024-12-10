@@ -83,6 +83,11 @@ a.card-link {
   color: white;
   margin: 1rem;
 }
+
+.li {
+  background-color: rgb(121, 102, 121);
+  color: white;
+}
 /* ##################################################################### */
 
 /* Nav Bar Styles */

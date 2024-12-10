@@ -9,6 +9,7 @@ function AssetCard({ assetObj }) {
       <Card.Body className="">
         <Card.Title>{assetObj.name}</Card.Title>
         <Card.Text className="asset-notes">{assetObj.notes}</Card.Text>
+        <Card.Text className="asset-location">{assetObj.locationCity}</Card.Text>
       </Card.Body>
     </Card>
   );
@@ -25,6 +26,7 @@ AssetCard.propTypes = {
     serialNo: PropTypes.string,
     type: PropTypes.string,
     isDeployed: PropTypes.bool,
+    locationCity: PropTypes.string,
   }).isRequired,
 };
 
