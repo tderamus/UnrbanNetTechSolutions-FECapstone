@@ -9,7 +9,8 @@ function AssetCard({ assetObj }) {
       <Card.Body className="">
         <Card.Title>{assetObj.name}</Card.Title>
         <Card.Text className="asset-notes">{assetObj.notes}</Card.Text>
-        <Card.Text className="asset-location">{assetObj.locationCity}</Card.Text>
+        <Card.Text className="asset-location">Location: {assetObj.locationCity}</Card.Text>
+        <Card.Text className="asset-price">Price: {assetObj.price}</Card.Text>
       </Card.Body>
     </Card>
   );
@@ -21,6 +22,7 @@ AssetCard.propTypes = {
     description: PropTypes.string,
     name: PropTypes.string,
     notes: PropTypes.string,
+    price: PropTypes.string,
     assetNo: PropTypes.number,
     modelNo: PropTypes.string,
     serialNo: PropTypes.string,
