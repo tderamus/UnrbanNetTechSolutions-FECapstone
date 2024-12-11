@@ -21,7 +21,7 @@ function ProfileAssetCard({ assetObj, onUpdate }) {
       <div className="card-footer card-actions">
         <Card.Body className="asset-actions">
           <Card.Link href={`/Assets/view/${assetObj.firebaseKey}`} passHref>
-            VIEW
+            DETAILS
           </Card.Link>
           <Card.Link href={`/Assets/edit/${assetObj.firebaseKey}`} passHref>
             EDIT

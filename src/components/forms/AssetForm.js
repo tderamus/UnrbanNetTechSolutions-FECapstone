@@ -61,7 +61,7 @@ function AssetForm({ obj = initialState }) {
       createAsset(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateAsset(patchPayload).then(() => {
-          router.push('/ShowAssets/');
+          router.push(`/UserProfile/${obj.uid}`);
         });
       });
     }
