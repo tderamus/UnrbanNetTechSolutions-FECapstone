@@ -88,6 +88,10 @@ a.card-link {
   background-color: rgb(121, 102, 121);
   color: white;
 }
+
+.asset-list {
+  max-width: 100px;
+}
 /* ##################################################################### */
 
 /* Nav Bar Styles */

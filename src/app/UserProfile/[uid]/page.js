@@ -11,6 +11,7 @@ import ProfileCard from '../../../components/ProfileCard';
 import ProfileLocationCard from '../../../components/ProfileLocationCard';
 import ProfileEmployeeCard from '../../../components/ProfileEmployeeCard';
 import { getEmployeesByID } from '../../../api/employeeData';
+import AssetTable from '../../../components/Tables';
 
 export default function UserProfile() {
   const [userDevices, setUserDevices] = useState([]);
@@ -27,6 +28,7 @@ export default function UserProfile() {
         console.error('error fetching asset data', error);
       });
   };
+
   const showAllLocationsID = () => {
     getLocationsByID()
       .then((data) => {
@@ -68,19 +70,6 @@ export default function UserProfile() {
       <div className="user-profile">
         <ProfileCard userData={{ name: userName }} />
       </div>
-      <h2 className="user-locations">User Managed Locations:</h2>
-      <div className="profile-location-card">
-        {profileLocations.map((locations) => (
-          <ProfileLocationCard key={locations.firebaseKey} profileLocationObj={locations} onUpdate={showAllLocationsID} />
-        ))}
-      </div>
-      <h2 className="user-employees">User Managed Employees:</h2>
-      <div className="profile-employee-card">
-        {profileEmployees.map((employee) => (
-          <ProfileEmployeeCard key={employee.firebaseKey} profileEmployeeObj={employee} onUpdate={showAllEmployeesID} />
-        ))}
-      </div>
-
       <div className="add-buttons">
         <Link href="/Assets/new" passHref>
           <Button type="button">Add Managed Assets</Button>
@@ -92,12 +81,32 @@ export default function UserProfile() {
           <Button type="button">Add Managed Employee</Button>
         </Link>
       </div>
+
+      <h2 className="user-locations">User Managed Locations:</h2>
+
+      <div className="profile-location-card">
+        {profileLocations.map((locations) => (
+          <ProfileLocationCard key={locations.firebaseKey} profileLocationObj={locations} onUpdate={showAllLocationsID} />
+        ))}
+      </div>
+      <hr />
+      <h2 className="user-employees">User Managed Employees:</h2>
+      <div className="profile-employee-card">
+        {profileEmployees.map((employee) => (
+          <ProfileEmployeeCard key={employee.firebaseKey} profileEmployeeObj={employee} onUpdate={showAllEmployeesID} />
+        ))}
+      </div>
+      <hr />
+
       <h2 className="user-assets">User Managed Assets:</h2>
+
       <div className="profile-asset-card">
         {userDevices.map((assets) => (
           <ProfileAssetCard key={assets.firebaseKey} assetObj={assets} onUpdate={getDevicesId} />
         ))}
       </div>
+      <hr />
+      <AssetTable listAssets={userDevices} />
     </>
   );
 }
