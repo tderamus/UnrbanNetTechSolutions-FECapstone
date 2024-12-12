@@ -15,7 +15,7 @@ function AssetViewCard({ assetObj }) {
         <Card.Text> Deployment Notes: {asset.notes}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush list-group">
-        <ListGroup.Item className="li">Asset Price: {asset.price}</ListGroup.Item>
+        <ListGroup.Item className="li">Asset Price: ${asset.price}</ListGroup.Item>
         <ListGroup.Item>Asset No: {asset.assetNo}</ListGroup.Item>
         <ListGroup.Item>Model No: {asset.modelNo}</ListGroup.Item>
         <ListGroup.Item>Serial No: {asset.serialNo}</ListGroup.Item>

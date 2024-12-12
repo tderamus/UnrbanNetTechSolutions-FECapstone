@@ -10,7 +10,7 @@ function AssetCard({ assetObj }) {
         <Card.Title>{assetObj.name}</Card.Title>
         <Card.Text className="asset-notes">{assetObj.notes}</Card.Text>
         <Card.Text className="asset-location">Location: {assetObj.locationCity}</Card.Text>
-        <Card.Text className="asset-price">Price: {assetObj.price}</Card.Text>
+        <Card.Text className="asset-price">Price: ${assetObj.price}</Card.Text>
       </Card.Body>
     </Card>
   );
