@@ -105,7 +105,7 @@ export default function UserProfile() {
           <ProfileAssetCard key={assets.firebaseKey} assetObj={assets} onUpdate={getDevicesId} />
         ))}
       </div>
-      <hr />
+
       <AssetTable listAssets={userDevices} />
     </>
   );

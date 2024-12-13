@@ -24,6 +24,12 @@ body {
   margin: 3rem;
 }
 
+hr {
+  height: 10px;
+  margin: 20px 0;
+  opacity: 100;
+}
+
 /* ############################################################ */
 
 /* Card Styles */
@@ -89,8 +95,19 @@ a.card-link {
   color: white;
 }
 
-.asset-list {
-  max-width: 100px;
+.asset-list, .asset-totals-list {
+  max-width: 400px;
+  text-align: center;
+}
+
+.product-totals {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  margin-top: 5vh;
+  border: white 2px solid;
+  padding: 5vh 5vh;
 }
 /* ##################################################################### */
 
