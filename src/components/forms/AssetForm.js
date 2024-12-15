@@ -72,7 +72,7 @@ function AssetForm({ obj = initialState }) {
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Asset</h2>
 
       {/* ASSET IMAGE */}
-      <FloatingLabel controlId="floatingInput2" label="Asset Image" className="mb-3">
+      <FloatingLabel controlId="floatingInput2" label="Enter an image url" className="mb-3">
         <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} required />
       </FloatingLabel>
 
@@ -112,7 +112,7 @@ function AssetForm({ obj = initialState }) {
       <div className="mb-3">
         <Form.Label className="text-white">Asset Type</Form.Label>
         <div>
-          {['Desktop', 'Laptop', 'Tablet', 'Mobile Phone', 'Hotspot'].map((type) => (
+          {['Desktop', 'Laptop', 'Tablet', 'Mobile Phone', 'Hotspot', 'Router', 'Server', 'Smart Board/TV'].map((type) => (
             <Form.Check key={type} inline label={type} type="radio" id={`type-${type}`} name="type" value={type} checked={formInput.type === type} onChange={handleChange} className="text-white" />
           ))}
         </div>

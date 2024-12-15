@@ -2,8 +2,7 @@ import { clientCredentials, firebase } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-// Get All Locations
-
+// Get All Employees
 const getAllEmployees = () =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/employees.json`, {
@@ -23,7 +22,7 @@ const getAllEmployees = () =>
       .catch(reject);
   });
 
-// Get Locations By UID
+// Get Employees By UID
 const getEmployeesByID = () =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/employees.json?orderBy="uid"&equalTo="${firebase.auth().currentUser.uid}"`, {
@@ -43,7 +42,7 @@ const getEmployeesByID = () =>
       .catch(reject);
   });
 
-// Create New Location
+// Create New Employee
 const createEmployee = (payload) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/employees.json`, {
@@ -58,7 +57,7 @@ const createEmployee = (payload) =>
       .catch(reject);
   });
 
-// Update Location
+// Update Employee
 const updateEmployee = (payload) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/employees/${payload.firebaseKey}.json`, {
@@ -73,26 +72,7 @@ const updateEmployee = (payload) =>
       .catch(reject);
   });
 
-// Get Single Location
-// const getSingleEmployee = (firebaseKey) =>
-//   new Promise((resolve, reject) => {
-//     fetch(`${endpoint}/locations/${firebaseKey}.json`, {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         if (data) {
-//           resolve(Object.values(data));
-//         } else {
-//           resolve([]);
-//         }
-//       })
-//       .catch(reject);
-//   });
-
+// Get Single Employee
 const getSingleEmployee = (firebaseKey) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/employees/${firebaseKey}.json`, {
@@ -106,7 +86,7 @@ const getSingleEmployee = (firebaseKey) =>
       .catch(reject);
   });
 
-// Delete Location
+// Delete Employee
 const deleteSingleEmployee = (firebaseKey) =>
   new Promise((resolve, reject) => {
     fetch(`${endpoint}/employees/${firebaseKey}.json`, {

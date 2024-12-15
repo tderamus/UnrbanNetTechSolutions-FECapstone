@@ -10,7 +10,6 @@ function ShowEmployees() {
   const showAllEmployees = () => {
     getAllEmployees()
       .then((data) => {
-        console.log('Employee Data', data);
         setEmployees(data);
       })
       .catch((error) => {

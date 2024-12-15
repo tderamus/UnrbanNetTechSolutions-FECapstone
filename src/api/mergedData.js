@@ -1,4 +1,4 @@
-import { getSingleAsset, getAssetLocation } from './assetData';
+import { getSingleAsset, getAllAssets, getAssetsByAssignment } from './assetData';
 import { getSingleEmployee } from './employeeData';
 import { getSingleLocation } from './locationData';
 
@@ -6,23 +6,37 @@ const getAssetDetails = (firebaseKey) =>
   new Promise((resolve, reject) => {
     getSingleAsset(firebaseKey)
       .then((assetObject) => {
-        console.log('Asset Object', assetObject);
         Promise.all([getSingleLocation(assetObject.locationId), getSingleEmployee(assetObject.assignment)]).then(([locationObject, employeeObject]) => {
-          console.log('Location Object', locationObject);
-          console.log('Employee Object', employeeObject);
           resolve({ locationObject, employeeObject, ...assetObject });
         });
       })
       .catch((error) => reject(error));
   });
 
-const getLocationDetails = (firebaseKey) =>
+const getEmployeeDetails = (firebaseKey) =>
   new Promise((resolve, reject) => {
-    Promise.all([getSingleLocation(firebaseKey), getAssetLocation(firebaseKey)])
-      .then(([locationObject, locationArray]) => {
-        console.log('location object detail', locationObject);
-        resolve({ ...locationObject, locations: locationArray });
+    getSingleEmployee(firebaseKey)
+      .then((employeeObject) => {
+        getAssetsByAssignment(employeeObject.firebaseKey)
+          .then((assetsObject) => {
+            resolve({ assetsObject, ...employeeObject });
+          })
+          .catch((error) => reject(error));
       })
       .catch((error) => reject(error));
   });
-export { getAssetDetails, getLocationDetails };
+
+const getLocationDetails = (firebaseKey) =>
+  new Promise((resolve, reject) => {
+    getSingleLocation(firebaseKey)
+      .then((locationObject) => {
+        console.log('Location Object Detail', locationObject);
+        Promise.all([getAllAssets(locationObject.city)]).then(([assetsObject]) => {
+          console.log('Resolved Assets Object', assetsObject);
+          resolve({ assetsObject, ...locationObject });
+        });
+      })
+      .catch((error) => reject(error));
+  });
+
+export { getAssetDetails, getLocationDetails, getEmployeeDetails };
