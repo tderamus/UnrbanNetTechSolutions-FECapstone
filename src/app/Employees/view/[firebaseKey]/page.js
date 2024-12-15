@@ -32,11 +32,7 @@ export default function ViewEmployeeDetails({ params }) {
     console.log('employee assets', employeeAssets);
   }, [employeeDetails, employeeAssets]);
 
-  return (
-    <>
-      <div className="d-flex flex-wrap asset-view-card">{Array.isArray(employeeDetails) ? employeeDetails.map((details) => <EmployeeAssetViewCard key={details.firebaseKey} assetObj={details} onUpdate={getEmployeeDetails} />) : employeeDetails && <EmployeeAssetViewCard key={employeeDetails.firebaseKey} assetObj={employeeDetails} onUpdate={getEmployeeDetails} />}</div>;
-    </>
-  );
+  return <div className="d-flex flex-wrap asset-view-card">{Array.isArray(employeeDetails) ? employeeDetails.map((details) => <EmployeeAssetViewCard key={details.firebaseKey} assetObj={details} onUpdate={getEmployeeDetails} />) : employeeDetails && <EmployeeAssetViewCard key={employeeDetails.firebaseKey} assetObj={employeeDetails} onUpdate={getEmployeeDetails} />}</div>;
 }
 
 ViewEmployeeDetails.propTypes = {
