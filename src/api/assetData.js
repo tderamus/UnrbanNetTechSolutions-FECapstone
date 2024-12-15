@@ -43,6 +43,19 @@ const getAssetsByID = () =>
       .catch(reject);
   });
 
+const getAssetsByAssignment = (firebaseKey) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/assets.json?orderBy="assignment"&equalTo="${firebaseKey}"`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
 // Create New Asset
 const createAsset = (payload) =>
   new Promise((resolve, reject) => {
@@ -115,4 +128,4 @@ const getAssetLocation = (firebaseKey) =>
       .catch(reject);
   });
 
-export { getAllAssets, getAssetsByID, createAsset, updateAsset, getSingleAsset, deleteSingleAsset, getAssetLocation };
+export { getAllAssets, getAssetsByID, createAsset, updateAsset, getSingleAsset, deleteSingleAsset, getAssetLocation, getAssetsByAssignment };

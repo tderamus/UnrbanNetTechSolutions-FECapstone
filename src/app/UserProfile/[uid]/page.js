@@ -61,7 +61,7 @@ export default function UserProfile() {
     // Get user locations by UID
     showAllLocationsID();
 
-    // Get employees b UID
+    // Get employees by UID
     showAllEmployeesID();
   }, []);
 

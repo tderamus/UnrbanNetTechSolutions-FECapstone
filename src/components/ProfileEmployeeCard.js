@@ -19,6 +19,7 @@ export default function ProfileEmployeeCard({ profileEmployeeObj, onUpdate }) {
         <ListGroup className="list-group-flush ">
           <ListGroup.Item className="employee-data">
             {profileEmployeeObj.first_name}, {profileEmployeeObj.last_name}
+            <Card.Link href={`/Employees/view/${profileEmployeeObj.firebaseKey}`}>📃</Card.Link>
             <Card.Link href={`/Employees/edit/${profileEmployeeObj.firebaseKey}`}>🖋</Card.Link>
             <Card.Link href="#" onClick={deleteEmployee}>
               ❌
