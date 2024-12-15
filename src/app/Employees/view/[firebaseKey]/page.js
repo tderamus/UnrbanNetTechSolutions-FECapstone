@@ -22,7 +22,8 @@ export default function ViewEmployeeDetails({ params }) {
     getEmployeeDetails(firebaseKey)
       .then((data) => {
         setEmployeeDetails(data);
-        setEmployeeAssets(data.assetsObject || []);
+        setEmployeeAssets(Object.values(data.assetsObject || {}));
+        console.log('assets array', data.assetsObject);
       })
       .catch((error) => console.error('Error fetching asset:', error));
   }, [firebaseKey]);
@@ -32,7 +33,7 @@ export default function ViewEmployeeDetails({ params }) {
     console.log('employee assets', employeeAssets);
   }, [employeeDetails, employeeAssets]);
 
-  return <div className="d-flex flex-wrap asset-view-card">{Array.isArray(employeeDetails) ? employeeDetails.map((details) => <EmployeeAssetViewCard key={details.firebaseKey} assetObj={details} onUpdate={getEmployeeDetails} />) : employeeDetails && <EmployeeAssetViewCard key={employeeDetails.firebaseKey} assetObj={employeeDetails} onUpdate={getEmployeeDetails} />}</div>;
+  return <div className="d-flex flex-wrap asset-view-card">{employeeAssets.length > 0 ? employeeAssets.map((asset) => <EmployeeAssetViewCard key={asset.firebaseKey} assetObj={{ ...asset, ...employeeDetails }} onUpdate={() => getEmployeeDetails(firebaseKey)} />) : <p>No assets available for this employee.</p>}</div>;
 }
 
 ViewEmployeeDetails.propTypes = {
