@@ -86,6 +86,20 @@ const getSingleEmployee = (firebaseKey) =>
       .catch(reject);
   });
 
+// Get Employees Location
+const getEmployeesByLocation = (firebaseKey) =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/employees.json?orderBy="locationId"&equalTo="${firebaseKey}"`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(data))
+      .catch(reject);
+  });
+
 // Delete Employee
 const deleteSingleEmployee = (firebaseKey) =>
   new Promise((resolve, reject) => {
@@ -100,4 +114,4 @@ const deleteSingleEmployee = (firebaseKey) =>
       .catch(reject);
   });
 
-export { getAllEmployees, getEmployeesByID, createEmployee, updateEmployee, getSingleEmployee, deleteSingleEmployee };
+export { getAllEmployees, getEmployeesByID, createEmployee, updateEmployee, getSingleEmployee, deleteSingleEmployee, getEmployeesByLocation };

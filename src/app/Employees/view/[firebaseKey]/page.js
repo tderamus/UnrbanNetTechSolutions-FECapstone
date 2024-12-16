@@ -28,11 +28,6 @@ export default function ViewEmployeeDetails({ params }) {
       .catch((error) => console.error('Error fetching asset:', error));
   }, [firebaseKey]);
 
-  // useEffect(() => {
-  //   console.log('employee details', employeeDetails);
-  //   console.log('employee assets', employeeAssets);
-  // }, [employeeDetails, employeeAssets]);
-
   return <div className="d-flex flex-wrap asset-view-card">{employeeAssets.length > 0 ? employeeAssets.map((asset) => <EmployeeAssetViewCard key={asset.firebaseKey} assetObj={{ ...asset, ...employeeDetails }} onUpdate={() => getEmployeeDetails(firebaseKey)} />) : <p>No assets available for this employee.</p>}</div>;
 }
 

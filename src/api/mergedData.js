@@ -1,5 +1,5 @@
-import { getSingleAsset, getAllAssets, getAssetsByAssignment } from './assetData';
-import { getSingleEmployee } from './employeeData';
+import { getSingleAsset, getAssetsByAssignment } from './assetData';
+import { getEmployeesByLocation, getSingleEmployee } from './employeeData';
 import { getSingleLocation } from './locationData';
 
 const getAssetDetails = (firebaseKey) =>
@@ -13,6 +13,7 @@ const getAssetDetails = (firebaseKey) =>
       .catch((error) => reject(error));
   });
 
+// API call to attach employee assets to employee records
 const getEmployeeDetails = (firebaseKey) =>
   new Promise((resolve, reject) => {
     getSingleEmployee(firebaseKey)
@@ -30,11 +31,11 @@ const getLocationDetails = (firebaseKey) =>
   new Promise((resolve, reject) => {
     getSingleLocation(firebaseKey)
       .then((locationObject) => {
-        console.log('Location Object Detail', locationObject);
-        Promise.all([getAllAssets(locationObject.city)]).then(([assetsObject]) => {
-          console.log('Resolved Assets Object', assetsObject);
-          resolve({ assetsObject, ...locationObject });
-        });
+        getEmployeesByLocation(locationObject.firebaseKey)
+          .then((employeeObject) => {
+            resolve({ employeeObject, ...locationObject });
+          })
+          .catch((error) => reject(error));
       })
       .catch((error) => reject(error));
   });
