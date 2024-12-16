@@ -19,6 +19,7 @@ export default function ProfileLocationCard({ profileLocationObj, onUpdate }) {
         <ListGroup className="list-group-flush ">
           <ListGroup.Item className="location-data">
             {profileLocationObj.city}, {profileLocationObj.state}
+            <Card.Link href={`/Locations/view/${profileLocationObj.firebaseKey}`}>📃</Card.Link>
             <Card.Link href={`/Locations/edit/${profileLocationObj.firebaseKey}`}>🖋</Card.Link>
             <Card.Link href="#" onClick={deleteLocation}>
               ❌
