@@ -4,15 +4,14 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function AssetViewCard({ assetObj }) {
-  // get assetObj data into locationObj to include location by asset locationId, and employee by assignment
   const { locationObject, employeeObject, ...asset } = assetObj;
 
   return (
     <Card style={{ width: '30rem', height: '40rem' }}>
       <Card.Img variant="top" src={asset.image} alt={asset.description} className="card-image" />
       <Card.Body>
-        <Card.Title> Asset Name: {asset.name}</Card.Title>
-        <Card.Text> Deployment Notes: {asset.notes}</Card.Text>
+        <Card.Title>Asset Name: {asset.name}</Card.Title>
+        <Card.Text>Deployment Notes: {asset.notes}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush list-group">
         <ListGroup.Item className="li">Asset Price: ${asset.price}</ListGroup.Item>
@@ -20,8 +19,8 @@ function AssetViewCard({ assetObj }) {
         <ListGroup.Item>Model No: {asset.modelNo}</ListGroup.Item>
         <ListGroup.Item>Serial No: {asset.serialNo}</ListGroup.Item>
         <ListGroup.Item>Asset Type: {asset.type}</ListGroup.Item>
-        <ListGroup.Item className="li">Location: {[locationObject?.city, ' ', locationObject.state] || 'No location found'}</ListGroup.Item>
-        <ListGroup.Item className="li">Assigned To: {[employeeObject?.first_name, ' ', employeeObject.last_name] || 'No employee found'}</ListGroup.Item>
+        <ListGroup.Item className="li">Location: {locationObject ? `${locationObject.city || ''}, ${locationObject.state || ''}`.trim() || 'No location found' : 'No location found'}</ListGroup.Item>
+        <ListGroup.Item className="li">Assigned To: {employeeObject ? `${employeeObject.first_name || ''} ${employeeObject.last_name || ''}`.trim() || 'No employee found' : 'No employee found'}</ListGroup.Item>
         <p className="card-text bold deployed">
           {asset.isDeployed && (
             <span>

@@ -112,7 +112,7 @@ function AssetForm({ obj = initialState }) {
       <div className="mb-3">
         <Form.Label className="text-white">Asset Type</Form.Label>
         <div>
-          {['Desktop', 'Laptop', 'Tablet', 'Mobile Phone', 'Hotspot', 'Router', 'Server', 'Smart Board/TV'].map((type) => (
+          {['Desktop', 'Laptop', 'Tablet', 'Mobile Phone', 'Docking Station', 'Hotspot', 'Router', 'Server', 'Smart Board/TV'].map((type) => (
             <Form.Check key={type} inline label={type} type="radio" id={`type-${type}`} name="type" value={type} checked={formInput.type === type} onChange={handleChange} className="text-white" />
           ))}
         </div>
